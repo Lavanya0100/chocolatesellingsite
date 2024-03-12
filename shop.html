@@ -1,0 +1,161 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Example</title>
+    <script>
+        
+    function getSelectedValue() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option1") {
+                    document.getElementById("e1").innerHTML = "you selected none :(";
+                    
+                }
+                else {
+                    document.getElementById("e1").innerHTML = "you selected 1kg added to cart:)";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue1() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options1');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option11") {
+                    document.getElementById("e2").innerHTML = "you selected none:(";
+                   
+                }
+                else {
+                    document.getElementById("e2").innerHTML = "you selcted 1kg added to cart:)";
+
+                }
+                // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue2() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options2');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option12") {
+                    document.getElementById("e3").innerHTML = "you selected none:(";
+                    
+                }
+                else {
+                    document.getElementById("e3").innerHTML = "you selected 1kg added to cart:)";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+
+    function calculatesum() {
+        var quizform = document.getElementById('quizform');
+        var score = 0;
+
+        // Check answers for each question
+        if (quizform.options.value === 'option2') {
+            score=score+200;
+        }
+
+        if (quizform.options1.value === 'option21') {
+            score=score+400;
+        }
+
+        if (quizform.options2.value === 'option22') {
+            score=score+500;
+        }
+        document.getElementById("e6").innerHTML = "Your total amount to be paid is: " + score ;
+
+        
+    }
+    </script>
+</head>
+
+<div style="border:50px;border-color:black;box-sizing: border-box; 
+border: 10px solid black;background-color:rgb(250, 231, 210) ">
+
+    <body style="background:url('chocowall1.jpg');border:500px;border-color:black;padding:50px;border-radius:30px;">
+        <center>
+            <h1>QUIZ TIME</h1>
+            
+        </center>
+        <nav style="background-color:chocolate;font-size:medium;text-align:right">
+            <h3>
+                <a href="index.html" style="text-decoration:none;color:black">HOME</a>&ThickSpace;
+                <a href="quiz.html" style="text-decoration:none;color:black">PLAY A QUIZ</a>&ThickSpace;
+                <a href="login.html" style="text-decoration:none;color:black">LOGIN/SIGNUP</a>&ThickSpace;
+                <a href="contactus.html" style="text-decoration:none;color:black">CONTACT US</a>&ThickSpace;
+                <a href="shop.html" style="text-decoration:none;color:black">SHOP</a>&ThickSpace;</h3></nav>
+                <center>
+                <p><b>1.DARK CHOCOLATE</b><BR><BR>
+                <img src="dark.jpg" HEIGHT="80PX" WIDTH="100PX" ><br>
+                <br>
+                <form id="quizform">
+                <label for="options">
+                    <input type="radio" name="options" value="option1" id="option1" default> none
+                    <input type="radio" name="options" value="option2" id="option2"> 1 kg
+                    </label>
+                    
+
+                <p id="e1" style="color:red"></p>
+                <b>2.WHITE CHOCOLATE</b><br>
+                <br>
+                <IMG SRC="milk.jpg" height="80px" width="100px"><br>
+                    <br>
+                    <label for="options">
+                        
+                        <input type="radio" name="options1" value="option11" id="option11"> none
+                        <input type="radio" name="options1" value="option21" id="option21"> 1 kg
+                        </label>
+                        
+                    <p id="e2" style="color:red"></p>
+                <b>3.COCOA POWDER</b><br><br>
+                <IMG SRC="cocoa-powder.jpg" height="80px" width="100px"><br><br>
+                    <label for="options">
+                        <input type="radio" name="options2" value="option12" id="option12"> none
+                        <input type="radio" name="options2" value="option22" id="option22"> 1 kg
+                </label>
+            </center>
+                
+
+                    <p id="e3" style="color:red"></p>
+                    <center> <button type="button" onclick="calculatesum()">Get Bill</button><br><br>
+                        <p id="e6" style="color:red"></p></center></form>
+
+
+
+                
+
+
+
+
+
+
+
+            </h3>
+        </nav>
+        </p>
+      
+        </div>
+    </body>
+        </html>

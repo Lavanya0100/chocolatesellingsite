@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Button Example</title>
+</head>
+
+<div style="border:50px;border-color:black;box-sizing: border-box; 
+border: 10px solid black;background-color:rgb(250, 231, 210) ">
+
+    <body style="background:url('chocowall1.jpg');border:500px;border-color:black;padding:50px;border-radius:30px;">
+        <center>
+            <h1>QUIZ TIME</h1>
+            
+        </center>
+        <nav style="background-color:chocolate;font-size:medium;text-align:right">
+            <h3>
+                <a href="index.html" style="text-decoration:none;color:black">HOME</a>&ThickSpace;
+                <a href="quiz.html" style="text-decoration:none;color:black">PLAY A QUIZ</a>&ThickSpace;
+                <a href="login.html" style="text-decoration:none;color:black">LOGIN/SIGNUP</a>&ThickSpace;
+                <a href="contactus.html" style="text-decoration:none;color:black">CONTACT US</a>&ThickSpace;
+                <a href="shop.html" style="text-decoration:none;color:black">SHOP</a>&ThickSpace;
+
+
+
+
+
+
+
+            </h3>
+        </nav>
+
+        <form id="quizform">
+            Which type of chocolate is known for its smooth and creamy texture, and is often used in candy bars and
+            other sweets?
+            <br>
+            <br>
+            <label for="options">
+                <input type="radio" name="options" value="option1" id="option1"> Milk chocolate
+                <input type="radio" name="options" value="option2" id="option2"> Dark chocolate
+                <input type="radio" name="options" value="option3" id="option3"> White chocolate
+                <input type="radio" name="options" value="option3" id="option3"> Ruby chocolate</label>
+            <p id="e1" style="color:red"></p>
+            <button type="button" onclick="return getSelectedValue()">Get Selected Value</button>
+            <br>
+            <br>
+
+
+            What is the main ingredient in chocolate?
+            <br>
+            <br>
+            <label for="options1">
+                <input type="radio" name="options1" value="option11" id="option11"> Cocoa beans
+                <input type="radio" name="options1" value="option21" id="option21"> Sugar
+                <input type="radio" name="options1" value="option31" id="option31"> Milk
+                <input type="radio" name="options1" value="option41" id="option31">Butter</label>
+            <p id="e2" style="color:red"></p>
+            <button type="button" onclick="return getSelectedValue1()">Get Selected Value</button>
+            <br>
+            <br>
+
+
+            Which country is the largest producer of cocoa beans?<br><br>
+            <label for="options2"><input type="radio" name="options2" value="option12" id="option12"> Ivory Coast
+                <input type="radio" name="options2" value="option22" id="option22">Ghana
+                <input type="radio" name="options2" value="option32" id="option32"> Indonesia
+                <input type="radio" name="options2" value="option42" id="option32">Brazil</label>
+            <p id="e3" style="color:red"></p>
+            <button type="button" onclick="return getSelectedValue2()">Get Selected Value</button><br>
+            <br>
+
+
+            What is the scientific name for the chocolate tree?<br><br>
+            <label for="options3">
+                <input type="radio" name="options3" value="option13" id="option13"> Theobroma cacao
+                <input type="radio" name="options3" value="option23" id="option23"> Coffea arabica
+                <input type="radio" name="options3" value="option33" id="option33"> Saccharum officinarum
+                <input type="radio" name="options3" value="option43" id="option33"> Vitis vinifera</label>
+            <p id="e4" style="color:red"></p>
+            <button type="button" onclick="return getSelectedValue3()">Get Selected Value</button><br><br>
+
+            What is the name of a popular chocolate candy that is shaped like a small cup and filled with a ganache
+            filling?<br><br>
+            <label for="options4"><input type="radio" name="options4" value="option14" id="option14"> Truffle
+                <input type="radio" name="options4" value="option24" id="option24"> Bonbon
+                <input type="radio" name="options4" value="option34" id="option34"> Praline
+                <input type="radio" name="options4" value="option44" id="option34"> Éclair</label>
+            <p id="e5" style="color:red"></p>
+
+
+            <button type="button" onclick="return getSelectedValue4()">Get Selected Value</button><br><br>
+
+           <center> <button type="button" onclick="calculatesum()">get score</button><br><br>
+            <p id="e6" style="color:red"></p></center>
+
+        </form>
+</div>
+
+
+</body>
+
+<script>
+
+    function getSelectedValue() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option1") {
+                    document.getElementById("e1").innerHTML = "correct";
+                    sum = sum + 1;
+                }
+                else {
+                    document.getElementById("e1").innerHTML = "wrong";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue1() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options1');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option11") {
+                    document.getElementById("e2").innerHTML = "correct";
+                    sum = sum + 1;
+                }
+                else {
+                    document.getElementById("e2").innerHTML = "wrong";
+
+                }
+                // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue2() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options2');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option12") {
+                    document.getElementById("e3").innerHTML = "correct";
+                    sum = sum + 1;
+                }
+                else {
+                    document.getElementById("e3").innerHTML = "wrong";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue3() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options3');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option13") {
+                    document.getElementById("e4").innerHTML = "correct";
+                    sum = sum + 1;
+                }
+                else {
+                    document.getElementById("e4").innerHTML = "wrong";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+    function getSelectedValue4() {
+        // Get all radio buttons with the name 'options'
+        var radioButtons = document.getElementsByName('options4');
+
+        // Loop through the radio buttons to find the selected one
+        for (var i = 0; i < radioButtons.length; i++) {
+            if (radioButtons[i].checked) {
+                // Display the value of the selected radio button
+                if (radioButtons[i].value == "option14") {
+                    document.getElementById("e5").innerHTML = "correct";
+                    sum = sum + 1;
+                }
+                else {
+                    document.getElementById("e5").innerHTML = "wrong";
+
+                }
+                break; // Exit the loop once a selected radio button is found
+            }
+        }
+    }
+
+    function calculatesum() {
+        var quizform = document.getElementById('quizform');
+        var score = 0;
+
+        // Check answers for each question
+        if (quizform.options.value === 'option1') {
+            score++;
+        }
+
+        if (quizform.options1.value === 'option11') {
+            score++;
+        }
+
+        if (quizform.options2.value === 'option12') {
+            score++;
+        }
+        if (quizform.options3.value === 'option13') {
+            score++;
+        }
+        if (quizform.options4.value === 'option14') {
+            score++;
+        }
+        
+
+
+        document.getElementById("e6").innerHTML = "Your Score: " + score + " out of 5";
+    }
+</script>
+
+</html>

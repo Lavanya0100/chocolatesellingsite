@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    body{
+        background-image:url('walll3.jpg');
+        text-align: center;
+        border: 20px;
+        padding:23px;
+        border-color:blue;
+
+    }
+    div{
+        background-color:tan;
+        padding:30px;
+        border-color:black;
+        margin:40px;
+        
+    }
+    #id1
+    {
+        background-color: aqua;
+        height:60px;
+        width:30px;
+        border:23px;
+        border-color:black;
+        align-self: center;
+
+    }
+    #id2
+    {
+        align-self: center;
+    }
+
+</style>
+<script>
+    function validatename()
+    {
+        var x =document.getElementById("uname");
+        if(x.value.length<5)
+        {
+            document.getElementById("e1").innerText="***the entered value is small";
+            return false;
+        }
+        else
+        {
+            document.getElementById("e1").innerText="hello"+ "   "+x.value+"!!";
+            return true;
+            
+        }
+    }
+    function validatelast()
+    {
+
+   
+        var y=document.getElementById("lname");
+        if(y.value.length<5)
+        {
+            document.getElementById("l1").innerText="***the entered value is small";
+            return false;
+        }
+        else
+        {
+            document.getElementById("l1").innerText="hello"+"   "+"Mr/MRS/MISS.   "+y.value+"!!";
+            return true;
+            
+        }
+
+    }
+    function validateemail()
+    {
+        var x=document.getElementById("cemail");
+        const digit=/\d/.test(x.value);
+        const alpha=/[a-zA-Z]/.test(x.value);
+        const sp=/[@]/.test(x.value);
+        if(x.value.lenght>15||!digit||!alpha||!sp)
+        {   
+            document.getElementById("e2").innerText="***text exceeded a certain length or does not contain a digit or alpha";
+            return false;
+        }
+        else{
+            
+            document.getElementById("e2").innerText="valid";
+            return true;
+        }
+    }
+    function upper()
+    {
+        var x=document.getElementById("uname");
+        x.value=x.value.toUpperCase();
+    }
+    function phone()
+    {
+        var y=document.getElementById("cphone").value;
+        if(!/[\d]{10}/.test(y))
+        {
+                  document.getElementById("e3").innerText="the phone should be valid 10 digits only";
+                  return false;
+        }
+        else if(y.length>10)
+        {
+            document.getElementById("e3").innerText="the phone should be valid 10 digits only";
+                  return false;
+        }
+        else{
+            document.getElementById("e3").innerText="valid proceed message will be sent on this number";
+            return true;
+        }
+    }
+    function pass()
+    {
+        var x=document.getElementById("cpass").value;
+        if(!/[\d]{2}/.test(x))
+        {
+            document.getElementById("e4").innerText="***not valid";
+            return false;
+        }
+        else if(!/[a-zA-Z]{4}/.test(x))
+        {
+            document.getElementById("e4").innerText="***not valid";
+            return false;
+        }
+        
+        else if(x.length>6)
+        {
+            document.getElementById("e4").innerText="***not valid";
+                  return false;
+        }
+        else
+        {
+            document.getElementById("e4").innerText="valid";
+            return true;
+        }
+
+    }
+    function check()
+    {
+        const x=document.getElementById("branch1");
+        x.checked=true;
+    }
+    function dropdown()
+    {
+        
+        var x=document.getElementById("cars");
+        var selected = x.options[x.selectedIndex].value;
+        alert("Selected option: " + selected);
+        document.getElementById("id3").innerText="selected"+selected;
+
+        
+            
+    }
+    function check1()
+    {
+        var x=document.getElementById("ins");
+        x.checked=true;
+    }
+    function check2()
+    {
+        var x=document.getElementById("ins");
+        x.checked=false;
+    }
+    function hide()
+    {
+        var x=document.getElementById("h1");
+        x.hidden=true;
+    }
+    function unhide()
+    {
+        var x=document.getElementById("h1");
+        x.hidden=false;
+    }
+    
+                  
+            
+        
+
+    
+    
+   
+</script>
+</head>
+<body>
+    <h1 style="color:brown">WELCOME TO THE LOGIN FORM</h1>
+    <div>
+        FIRSTNAME:   <input type="text" name="uname" id="uname" class="name" required onkeyup="return validatename()" onchange="upper()" required/><p id="e1" style="color:red"></p><br>
+        LASTNAME:    <input type="text"  name="lname"  id="lname" class="name"  onkeyup="return validatelast()"/><p id="l1" style="color:red" required></p><br>
+        EMAIL:       <input type="email"     name="email"   id="cemail" onkeyup="return validateemail()"/><p id="e2" style="color:red" required></p><br>
+        PHONE NUMBER:<input type="phone"  name="phone"  id="cphone" onkeyup="return phone()"/><p id="e3" style="color:red" required></p>
+        PASSWORD:    <input type="password"  name="pass"    id="cpass" onkeyup="return pass()" placeholder="2 digits and 4 alphabets" required/><p id="e4" style="color:red"></p>
+    <button type="submit" onclick=" return validatename()"><a href="sava.html" style="text-decoration:none">SUBMIT</button>
+        <br>
+
+
+
+
+        
+        
+       
+       
+        
+
+
+
+    </div>
+    
+    
+</body>
+
+</html>
+    
